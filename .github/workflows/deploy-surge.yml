@@ -34,6 +34,12 @@ jobs:
         run: npm run build
         working-directory: ./projet/frontend
 
+      - name: Verify build output
+        run: ls -al ./projet/frontend/build
+
+      - name: Verify build content
+        run: cat ./projet/frontend/build/index.html
+
       - name: Install Surge
         run: npm install -g surge
 
