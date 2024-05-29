@@ -13,6 +13,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Deploying to Surge
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./projet/frontend
     
     steps:
       - name: Checkout repository
