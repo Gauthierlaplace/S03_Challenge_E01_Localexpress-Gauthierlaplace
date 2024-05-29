@@ -35,10 +35,10 @@ jobs:
         working-directory: ./projet/frontend
 
       - name: Verify build output
-        run: ls -al ./projet/frontend/build
+        run: ls -al ./projet/frontend/dist
 
       - name: Verify build content
-        run: cat ./projet/frontend/build/index.html
+        run: cat ./projet/frontend/dist/index.html
 
       - name: Install Surge
         run: npm install -g surge
