@@ -44,4 +44,4 @@ jobs:
         run: echo ${{ secrets.SURGE_TOKEN }}
 
       - name: Deploy to Surge
-        run: surge ./projet/frontend/build ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+        run: surge ./projet/frontend/dist ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
