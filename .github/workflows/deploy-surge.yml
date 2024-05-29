@@ -37,5 +37,11 @@ jobs:
       - name: Install Surge
         run: npm install -g surge
 
+      - name: Verify Surge domain secret
+        run: echo ${{ secrets.SURGE_DOMAIN }}
+
+      - name: Verify Surge token secret
+        run: echo ${{ secrets.SURGE_TOKEN }}
+
       - name: Deploy to Surge
         run: surge ./projet/frontend/build ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
