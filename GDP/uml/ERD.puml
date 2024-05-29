@@ -1,0 +1,50 @@
+@startuml erd
+
+
+entity "User" as U {
+    * id
+    ---
+    * role
+    * nom
+    * prénom
+    * adresse
+    * telephone
+}
+
+entity "Article" as A {
+    * id
+    ---
+    * prix
+    * description
+    * titre
+    * disponibilite
+}
+
+entity "Panier" as P {
+    * id
+    ---
+}
+
+entity "Panier_Articles" as PA {
+    * id
+    ---
+    * panier_id
+    * article_id
+    * quantité
+}
+
+entity "Order" as O {
+    * id
+    ---
+    * user_id
+    * panier_id
+    * date
+    * montant
+}
+
+U ||--o{ O
+A }o--o{ P
+O ||--|| P
+
+
+@enduml

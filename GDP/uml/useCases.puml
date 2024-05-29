@@ -1,0 +1,24 @@
+@startuml usecases
+
+left to right direction
+
+actor U as "Client"
+actor A as "Commerçant"
+
+rectangle "Produits" {
+    usecase "Ajouter au panier" as uc1
+    usecase "Gestion produits" as uc2
+}
+
+rectangle "Commandes" {
+    usecase "Valider la commande" as uc3
+    usecase "Gestion des commandes" as uc4
+}
+
+U --> uc1
+U --> uc3
+
+A --> uc2
+A --> uc4
+
+@enduml

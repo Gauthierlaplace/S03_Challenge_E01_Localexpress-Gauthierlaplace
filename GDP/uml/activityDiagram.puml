@@ -1,0 +1,21 @@
+@startuml activite client
+
+start
+:Commencer;
+:Voir les produits;
+
+while (navigation en cours)
+    fork
+        :Ajouter un produit au panier;
+    fork again
+        :Modifier le panier (qté ou supprimer ou vider);
+    fork again
+        :Consulter les détails d'un produit;
+    end fork
+endwhile (fin navigation)
+:Voir le panier;
+:Renseigner les infos de livraison;
+:Valider la commande;
+end
+
+@enduml

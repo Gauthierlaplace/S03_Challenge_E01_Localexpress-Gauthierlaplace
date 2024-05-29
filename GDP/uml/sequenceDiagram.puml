@@ -1,0 +1,13 @@
+@startuml
+actor Utilisateur
+actor Livreur
+
+Utilisateur -> (Voir Produits)
+(Voir Produits) --> (Sélectionner Produits)
+(Sélectionner Produits) --> (Passer Commande)
+(Passer Commande) --> (Entrer Informations de Livraison)
+(Entrer Informations de Livraison) --> (Payer à la Livraison)
+
+(Payer à la Livraison) --> Livreur
+Livreur --> (Collecter Paiement)
+@enduml

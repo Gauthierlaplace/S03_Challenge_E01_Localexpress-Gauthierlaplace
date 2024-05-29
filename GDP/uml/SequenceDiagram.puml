@@ -1,0 +1,14 @@
+@startuml
+actor Utilisateur
+
+participant "Interface Utilisateur" as UI
+participant "Système" as System
+participant "Base de Données" as DB
+
+Utilisateur -> UI: Sélectionne un produit
+UI -> System: Envoyer la requête d'ajout de produit au panier
+System -> DB: Ajouter le produit au panier
+DB --> System: Confirmation de l'ajout
+System --> UI: Confirmation à l'utilisateur
+UI --> Utilisateur: Affiche la confirmation de l'ajout au panier
+@enduml
