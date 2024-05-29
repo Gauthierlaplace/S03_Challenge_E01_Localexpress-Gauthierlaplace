@@ -13,11 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Deploying to Surge
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./projet/frontend
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -29,11 +25,19 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./projet/frontend
 
       - name: Build project
         run: npm run build
+        working-directory: ./projet/frontend
+
   deploy:
     runs-on: ubuntu-latest
     name: Deploying to Surge
-    defaults:
-        run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to Surge
+        run: surge ./projet/frontend/build ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
